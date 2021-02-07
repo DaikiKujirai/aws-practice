@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-
+    <h1>Book Show</h1>
     <h1>User info</h1>
     <table>
       <tbody>
@@ -13,6 +13,7 @@
           <td><%= current_user.introduction %></td>
         </tr>
       </tbody>
+    </table>
 
 
     <h1>New book</h1>
@@ -27,14 +28,15 @@
     <h1>Book detail</h1>
     <table>
       <tbody>
-        <% @book.each do |book| %>
         <tr>
-          <td><%= @user.name %></td>
-          <td><%= book.title %></td>
-          <td><%= book.body %></td>
+          <%= link_to user_path(current_user.id) do %>
+          <%= @user.name %>
+          <% end %>
+          <%= link_to book_path do %>
+          <%= @book.title %>
+          <% end %>
+          <td><%= @book.body %></td>
         </tr>
-        <% end %>
-
       </tbody>
     </table>
   </body>

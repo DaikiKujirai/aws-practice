@@ -13,23 +13,23 @@
   <body>
     <% if user_signed_in? %>
       <li>
-        <%= "Home" %>
+        <%= link_to "Home", user_path(current_user) %>
       </li>
       <li>
-        <%= "Users" %>
+        <%= link_to "Users", users_path %>
       </li>
       <li>
-        <%= "Books" %>
+        <%= link_to "Books", books_path %>
       </li>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
       <li>
-        <%= "Home" %>
+        <%= link_to "Home", root_path %>
       </li>
       <li>
-        <%= "About" %>
+        <a href="homes/about">About</a>
       </li>
       <li>
         <%= link_to "sign up", new_user_registration_path %>

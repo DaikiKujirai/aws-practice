@@ -13,9 +13,29 @@ class UsersController < ApplicationController
     redirect_to book_path(@book)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def index
+    @users = User.all
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    redirect_to user_path
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to books_path
+  end
+
   private
 
-  def book_params
-    params.require(:book).permit(:user_id, :title, :body)
+  def user_params
+    params.require(:user).permit(:name, :introduction)
   end
 end

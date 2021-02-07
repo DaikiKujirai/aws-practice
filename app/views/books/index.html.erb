@@ -2,12 +2,12 @@
 <html>
   <body>
 
-
+    <h1>Book index</h1>
     <h1>User info</h1>
     <p>name</p>
     <p>introduction</p>
 
-    <p>profile編集</p>
+    <p><%= link_to 'profile', edit_user_path(current_user.id) %></p>
 
 
     <h1>New book</h1>
