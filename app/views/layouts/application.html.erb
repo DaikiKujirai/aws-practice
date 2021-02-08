@@ -13,6 +13,9 @@
   <body>
     <% if user_signed_in? %>
       <li>
+        <a href="/">Bookers</a>
+      </li>
+      <li>
         <%= link_to "Home", user_path(current_user) %>
       </li>
       <li>
@@ -38,6 +41,6 @@
         <%= link_to "login", new_user_session_path %>
       </li>
     <% end %>
-  <%= yield %>
+    <%= yield %>
   </body>
 </html>
