@@ -1,23 +1,20 @@
 <h1>User Show</h1>
 <h1>User info</h1>
-<p></p>
-<table>
-  <tbody>
-    <tr>
-      <th>name</th>
-      <th><%= @user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <th><%= current_user.introduction %></th>
-    </tr>
-  </tbody>
-</table>
+    <table>
+      <tbody>
+        <tr>
 
-<p><%= link_to 'profile', edit_user_path(current_user.id) %></p>
+          <td>name</td>
+          <td><%= @user.name %></td>
+          <td>introduction</td>
+          <td><%= @user.introduction %></td>
+        </tr>
+      </tbody>
+    </table>
 
-<h1>New book</h1>
-    <%= form_with model:@book, local:true do |f| %>
+    <p><%= link_to 'profile', edit_user_path %></p>
+    <h1>New book</h1>
+    <%= form_with model:@book_new, local:true do |f| %>
       <h4>Title</h4>
       <%= f.text_field :title %>
       <h4>Opinion</h4>
@@ -40,8 +37,7 @@
           <td><%= book.title %></td>
           <td><%= book.body %></td>
 
-          <td><%= link_to 'Edit', edit_book_path %></td>
-          <td><%= link_to "Destroy", destroy_user_session_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+
         </tr>
         <% end %>
       </tbody>
