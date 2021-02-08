@@ -1,13 +1,16 @@
  <h1>User info</h1>
+ <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image" %>
     <table>
       <tbody>
         <tr>
-          
+
+
+
           <td>name</td>
           <td><%= current_user.name %></td>
           <td>introduction</td>
           <td><%= current_user.introduction %></td>
-          
+
         </tr>
       </tbody>
     </table>
