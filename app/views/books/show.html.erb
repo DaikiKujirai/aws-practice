@@ -6,15 +6,11 @@
     <table>
       <tbody>
         <tr>
-          <%= link_to user_path(current_user.id) do %>
-          <%= @user.name %>
-          <% end %>
-          <%= link_to book_path do %>
-          <%= @book.title %>
-          <% end %>
+          <td><%= link_to @user.name, user_path(@user) %></td>
+          <td><%= link_to @book.title, book_path %></td>
           <td><%= @book.body %></td>
           <td><%= link_to 'Edit', edit_book_path %></td>
-          <td><%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+          <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
         </tr>
       </tbody>
     </table>
