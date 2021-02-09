@@ -3,7 +3,7 @@
   <h4>Name</h4>
   <%= f.text_field :name %>
   <h4>Image</h4>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image" %>%>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image" %>
   <%= f.attachment_field :profile_image %>
   <h4>introduction</h4>
   <%= f.text_area :introduction %>
