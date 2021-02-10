@@ -19,6 +19,7 @@ class BooksController < ApplicationController
     @user = current_user
     if @book.save
       redirect_to book_path(@book.id)
+      flash[:notice] = "You have created book successfully."
     else
       render :index
     end
@@ -26,6 +27,9 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user != current_user
+      redirect_to books_path
+    end
   end
 
   def update
