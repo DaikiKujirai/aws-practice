@@ -12,6 +12,9 @@
         <div class="row">
           <a class="btn btn-success btn-sm btn-block sign_up" href="/users/sign_up">Sign Up</a>
         </div>
+        <div class="row mt-3">
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class:"btn btn-primary btn-sm btn-block guest_sign_in"%>
+        </div>
       </div>
     </div>
   </div>
