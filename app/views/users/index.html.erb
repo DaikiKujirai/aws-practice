@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3">
       <h1>User info</h1>
-      <%= attachment_image_tag current_user, :profile_image, :fill, 80, 80, fallback: "no_image" %>
+      <%= attachment_image_tag current_user, :profile_image, :fill, 60, 60, fallback: "no_image" %>
       <table class="table">
         <tbody>
           <tr>
@@ -23,13 +23,13 @@
         <%= f.label :Title %>
         <%= f.text_field :title, class: "form-control book_title" %>
         <%= f.label :Opinion %>
-        <%= f.text_area :body,class: "form-control book_body" %>
-        <p><%= f.submit 'Create Book', class:"btn btn-success" %></p>
+        <%= f.text_area :body, class: "form-control book_body" %>
+        <p><%= f.submit 'Create Book', class:"btn btn-success mt-3" %></p>
       <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
-      <table class="table">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th>image</th>

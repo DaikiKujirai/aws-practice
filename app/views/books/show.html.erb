@@ -6,7 +6,7 @@
       <table class="table">
         <tbody>
           <tr>
-            <th>name<th>
+            <th>name</th>
             <td><%= @user.name %></td>
           </tr>
           <tr>
@@ -32,7 +32,7 @@
       <table class="table">
         <tbody>
           <tr>
-            <td><%= link_to user_path(@user) do %>
+            <td class="text-center"><%= link_to user_path(@user) do %>
             <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image" %><br>
             <%= @user.name %>
             <% end %></td>

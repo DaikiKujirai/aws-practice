@@ -12,7 +12,7 @@
       <table class="table">
         <tbody>
           <tr>
-            <th>name<th>
+            <th>name</th>
             <td><%= current_user.name %></td>
           </tr>
           <tr>
@@ -30,7 +30,7 @@
         <%= f.text_field :title, class: "form-control book_title" %>
         <%= f.label :Opinion %>
         <%= f.text_area :body, class: "form-control book_body" %>
-        <p><%= f.submit 'Create Book', class:"btn btn-success" %></p>
+        <p><%= f.submit 'Create Book', class:"btn btn-success mt-3" %></p>
       <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
