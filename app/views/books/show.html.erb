@@ -24,7 +24,7 @@
         <%= f.text_field :title, class: "form-control book_title" %>
         <%= f.label :Opinion %>
         <%= f.text_area :body, class: "form-control book_body" %>
-        <p><%= f.submit 'Create Book', class:"btn btn-success" %></p>
+        <p><%= f.submit 'Create Book', class:"btn btn-success mt-3" %></p>
       <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
@@ -42,19 +42,11 @@
             <td><%= link_to 'Edit', edit_book_path, class: "btn btn-success" %></td>
             <td><%= link_to "Destroy", book_path(@book), class: "btn btn-danger", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
             <% end %>
-            <td><% if @book.favorited_by?(current_user) %>
-              <p>
-                <%= link_to book_favorites_path(@book), method: :delete do %>
-                  ♥<%= @book.favorites.count %> いいね
-                <% end %>
-              </p>
-              <% else %>
-              <p>
-                <%= link_to book_favorites_path(@book), method: :post do %>
-                  ♡<%= @book.favorites.count %> いいね
-                <% end %>
-              </p>
-            <% end %></td>
+            <td>
+              <div id="favorite<%= @book.id %>">
+                <%= render partial: 'favorites/like', locals: {book: @book} %>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -68,7 +60,7 @@
               <%= post_comment.created_at.strftime('%Y/%m/%d') %> <%= post_comment.comment %>
               <div class="comment-delete">
                 <% if post_comment.user == current_user %>
-                  <p><%= link_to "削除", book_post_comment_path(@post_comment.book, post_comment), method: :delete, class:"btn btn-danger mt-3" %></p>
+                  <p><%= link_to "削除", book_post_comment_path(post_comment.book, post_comment), method: :delete, class:"btn btn-danger mt-3" %></p>
                 <% end %>
               </div>
             <% end %>
