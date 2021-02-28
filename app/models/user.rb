@@ -16,4 +16,10 @@ class User < ApplicationRecord
    has_many :favorites, dependent: :destroy
   validates :name, presence: true, uniqueness: true, length: { minimum:2, maximum: 20 }
   validates :introduction, length: { maximum: 50 }
+
+  def self.search(seach)
+    return User.all unless search
+    User.where(['content LIKE ?', "%#{seach}%"])
+  end
+
 end

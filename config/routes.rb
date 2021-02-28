@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   end
   root 'homes#top'
   get 'home/about' => 'homes#about', as: "about"
-  resources :users
+  resources :users do
+    get :search, on: :collection
+  end
+
   resources :books do
     resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
